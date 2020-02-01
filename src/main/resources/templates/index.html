@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-bordered table-hover horizontal-align">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Action</th>
+        <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="dom: ${doms}">
+        <td th:text="${dom.id}" ></td>
+        <td th:text="${dom.name}"></td>
+        <td th:text="${dom.date}"></td>
+        <td><a th:href="@{/edit/{id}(id=${dom.id})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${dom.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<p><a th:href="@{/new}">ADD</a></p>
+<svg th:href="@{/new}">Add</svg>
+</body>
+</html>

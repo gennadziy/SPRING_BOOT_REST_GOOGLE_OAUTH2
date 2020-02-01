@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>USER add</title>
+</head>
+<body>
+<form  th:action="@{/save}" th:object="${dom}"  method="post">
+    <div class="form-group col-md-8">
+        <input type="text"  id="name" th:name="name" placeholder="Enter your name."  />
+    </div>
+    <!--<div class="form-group">-->
+        <!--<input type="text"  id="age" th:name="age" placeholder="Enter your age." maxlength="2" min="18"/>-->
+    <!--</div>-->
+    <div class="form-group">
+        <input type="time" readonly id="date" th:name="date" th:value="${#dates.format(#dates.createNow(), 'HH:mm')}" />
+    </div>
+    <button type="submit" >Add</button>
+
+</form>
+<p><a th:href="@{/main}">HOME</a></p>
+<svg th:href="@{/main}">HOME</svg>
+
+</body>
+</html>
