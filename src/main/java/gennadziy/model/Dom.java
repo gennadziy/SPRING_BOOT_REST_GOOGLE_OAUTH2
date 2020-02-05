@@ -1,4 +1,4 @@
-package gennadziy;
+package gennadziy.model;
 
 /*
 @Author Gennadziy GITHUB/gennadziy
@@ -20,9 +20,15 @@ public class Dom {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+
+   @Column(name = "fact")
+    private String cat1;
     @Column
     @NotEmpty(message = "not empty")
     private String name;
+
+
 
     private LocalTime date;
     public String getName () {
@@ -33,14 +39,7 @@ public class Dom {
         this.name = name;
     }
 
-    @Override
-    public String toString () {
-        return "Dom{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", date=" + date +
-                '}';
-    }
+
 
     public LocalTime getDate () {
         return date;
@@ -55,9 +54,28 @@ public class Dom {
         this.date = date;
     }
 
+    @Override
+    public String toString () {
+        return "Dom{" +
+                "id=" + id +
+                ", cat1='" + cat1 + '\'' +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                '}';
+    }
+
+    public String getCat1 () {
+        return cat1;
+    }
+
+    public void setCat1 ( String cat1 ) {
+        this.cat1 = cat1;
+    }
+
     public Long getId () {
 
         return id;
+
     }
 
     public void setId ( Long id ) {

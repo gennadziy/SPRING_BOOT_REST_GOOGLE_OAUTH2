@@ -11,6 +11,7 @@
         <th>ID</th>
         <th>Name</th>
         <th>Date</th>
+        <th>CatFact</th>
         <th>Action</th>
         <th>Delete</th>
 
@@ -21,6 +22,7 @@
         <td th:text="${dom.id}" ></td>
         <td th:text="${dom.name}"></td>
         <td th:text="${dom.date}"></td>
+        <td th:text="${dom.cat1}"></td>
         <td><a th:href="@{/edit/{id}(id=${dom.id})}">Edit</a></td>
         <td><a th:href="@{/delete/{id}(id=${dom.id})}">Delete</a></td>
     </tr>
