@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-bordered table-hover horizontal-align">
+    <thead>
+    <tr>
+        <th>curID</th>
+        <th>date</th>
+        <th>curAbbreviation</th>
+        <th>curScale</th>
+        <th>curName</th>
+        <th>curOfficialRate</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="kursWalut: ${kurs}">
+        <td th:text="${kursWalut.curID}" ></td>
+        <td th:text="${kursWalut.date}"></td>
+        <td th:text="${kursWalut.curAbbreviation}"></td>
+        <td th:text="${kursWalut.curScale}"></td>
+        <td th:text="${kursWalut.curName}"></td>
+        <td th:text="${kursWalut.curOfficialRate}"></td>
+        <!--<td><a th:href="@{/delete/{id}(id=${kursWalut.id})}">Delete</a></td>-->
+    </tr>
+    </tbody>
+</table>
+<form  th:action="@{/add}" th:object="${db}" method="post">
+    <button type="submit" name="action" value="save">save</button>
+</form>
+</body>
+</html>
