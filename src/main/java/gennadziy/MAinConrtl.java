@@ -65,6 +65,13 @@ public class MAinConrtl {
         return "valut";
     }
 
+    @GetMapping("/valut/delete/{id}")
+    public  String addValut(@PathVariable("id") Integer id, KursWalut kursWalut1){
+       kursWalut.deleteById ( id );
+        return "redirect:/valut";
+    }
+
+
     @PostMapping("/add")
     public String addW( Model model ) {
         Model model1 = model.addAttribute ( "db", new DbInsertion () );

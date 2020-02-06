@@ -25,7 +25,7 @@
         <td th:text="${kursWalut.curScale}"></td>
         <td th:text="${kursWalut.curName}"></td>
         <td th:text="${kursWalut.curOfficialRate}"></td>
-        <!--<td><a th:href="@{/delete/{id}(id=${kursWalut.id})}">Delete</a></td>-->
+        <td><a th:href="@{/valut/delete/{id}(id=${kursWalut.curID})}">Delete</a></td>
     </tr>
     </tbody>
 </table>

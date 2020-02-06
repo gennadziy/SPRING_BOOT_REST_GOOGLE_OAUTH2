@@ -1605,140 +1605,133 @@ PROJECT_ID</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="386" parent="298" name="Cur_OfficialRate">
+    <column id="386" parent="298" name="cur_official_rate">
       <Position>6</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="387" parent="298" name="cur_official_rate">
-      <Position>7</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="388" parent="298" name="PRIMARY">
+    <key id="387" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cur_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="389" parent="299" name="ID">
+    <column id="388" parent="299" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="390" parent="299" name="FIRST_NAME">
+    <column id="389" parent="299" name="FIRST_NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="299" name="LAST_NAME">
+    <column id="390" parent="299" name="LAST_NAME">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="299" name="MONEY">
+    <column id="391" parent="299" name="MONEY">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="393" parent="299" name="PRIMARY">
+    <key id="392" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="394" parent="300" name="id">
+    <column id="393" parent="300" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="395" parent="300" name="TITLE">
+    <column id="394" parent="300" name="TITLE">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="396" parent="300" name="PRIMARY">
+    <key id="395" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="397" parent="301" name="user_id">
+    <column id="396" parent="301" name="user_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="301" name="roles">
+    <column id="397" parent="301" name="roles">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="399" parent="301" name="FKfpm8swft53ulq2hl11yplpr5">
+    <index id="398" parent="301" name="FKfpm8swft53ulq2hl11yplpr5">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="400" parent="301" name="FKfpm8swft53ulq2hl11yplpr5">
+    <foreign-key id="399" parent="301" name="FKfpm8swft53ulq2hl11yplpr5">
       <ColNames>user_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>usr</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="401" parent="302" name="id">
+    <column id="400" parent="302" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="302" name="active">
+    <column id="401" parent="302" name="active">
       <Position>2</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="403" parent="302" name="password">
+    <column id="402" parent="302" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="404" parent="302" name="username">
+    <column id="403" parent="302" name="username">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="405" parent="302" name="PRIMARY">
+    <key id="404" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="406" parent="303" name="id">
+    <column id="405" parent="303" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="407" parent="303" name="age">
+    <column id="406" parent="303" name="age">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="408" parent="303" name="date">
+    <column id="407" parent="303" name="date">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="303" name="name">
+    <column id="408" parent="303" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="410" parent="303" name="PRIMARY">
+    <key id="409" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
