@@ -1,8 +1,12 @@
 package gennadziy.model;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -15,13 +19,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-/**
- * Created by jermorri on 6/14/17.
- */
-public class DbInsertion {
-    /**
-     * This class inserts data into a mysql database with the use of prepared statements and 10,000 row batches.
-     */
+@Slf4j
+public class DbInsertion extends Thread  {
 
     // JDBC driver name and database URL local disk database.
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -29,12 +28,16 @@ public class DbInsertion {
     static final String USER = "root";
     static final String PASSWORD = "251284251284";
 
+
     public static void main(String[] args) {
+        System.out.println (getAllStackTraces ().toString ());
+        URL url;
+
         try {
             //get URL content
-            URL url = new URL("http://www.nbrb.by/api/exrates/rates/145");
+            url = new URL("http://www.nbrb.by/api/exrates/rates/145");
             URLConnection conn = url.openConnection();
-//            http://www.nbrb.by/api/exrates/rates?periodicity=0
+            //http://www.nbrb.by/api/exrates/rates?periodicity=0
             //open the stream and put it into BufferedReader
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
@@ -42,15 +45,16 @@ public class DbInsertion {
             String inputLine;
 
             //save to this filename
-            String fileName = "C://1.json";
-            File file = new File (fileName);
+            String fileName = "C:/1.json";
+            File file = new File(fileName);
 
             if (!file.exists()) {
                 file.createNewFile();
             }
+
             //use FileWriter to write file
-            FileWriter fw = new FileWriter (file.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter (fw);
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
 
             while ((inputLine = br.readLine()) != null) {
                 bw.write(inputLine);
@@ -66,12 +70,10 @@ public class DbInsertion {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         Connection mysqlConnection = null;
         PreparedStatement preparedStatement = null;
         try {
             Class.forName(JDBC_DRIVER);
-
             System.out.println("Connection to database...");
             mysqlConnection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
             String query = " insert into mytable (Cur_ID, Date, Cur_Abbreviation, Cur_Scale, Cur_Name," +
@@ -94,7 +96,7 @@ public class DbInsertion {
             FileInputStream inputStream = new FileInputStream( "C://1.json" );
             Scanner sc = new Scanner(inputStream);
             while(sc.hasNextLine()) {
-                for (int i = 0; i < 10000; i++) {
+                for (int i = 0; i < 1; i++) {
                     if (sc.hasNextLine()) {
                         reviewer = sc.nextLine();
                         jsonLineSet.add(reviewer);
@@ -112,8 +114,8 @@ public class DbInsertion {
         }
     }
 
-    public static void insertData(Connection mySqlConnection, PreparedStatement preparedStatement, LinkedHashSet<String> jsonLineSet) {
-
+    public static void insertData(Connection mySqlConnection,
+                                  PreparedStatement preparedStatement, LinkedHashSet<String> jsonLineSet) {
         for(String jsonLine : jsonLineSet) {
             try {
                 System.out.println("Executing query...");
@@ -153,5 +155,12 @@ public class DbInsertion {
         }catch(SQLException se) {
             se.printStackTrace();
         }
+    }
+
+    @Override
+    public void run () {
+        DbInsertion db = new DbInsertion ();
+        db.run ();
+        super.run ();
     }
 }

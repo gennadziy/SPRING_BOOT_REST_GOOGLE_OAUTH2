@@ -74,6 +74,11 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.6</version>
 		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -103,6 +108,12 @@
             <artifactId>javax.json</artifactId>
             <version>1.0.4</version>
         </dependency>
+		<!-- https://mvnrepository.com/artifact/org.wildfly.core/wildfly-server -->
+		<dependency>
+			<groupId>org.wildfly.core</groupId>
+			<artifactId>wildfly-server</artifactId>
+			<version>11.0.0.Beta8</version>
+		</dependency>
 
     </dependencies>
 

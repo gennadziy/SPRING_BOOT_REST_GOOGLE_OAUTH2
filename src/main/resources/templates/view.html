@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>BORDER BY_BREST</title>
+</head>
+<body>
+<form  th:object="${granic}" >
+    <div class="form-control">
+        <label class="header"> id <span>:</span></label>
+        <input type="text" readonly  th:field="*{id}"/>
+    </div>
+    <div class="form-control">
+        <input type="text"readonly id="time" th:field="*{time}" required=""/>
+    </div>
+    <div class="form-control">
+        <input type="text" READONLY id="date" dfsfsdf th:field="*{date}" required=""/>
+    </div>
+
+    <form >
+            <img th:src="@{'data:image/jpg;base64,'+${bytes}}"/>
+    </form>
+</form>
+</body>
+</html>

@@ -8,13 +8,12 @@ Time: 21:04
 */
 
 import com.google.gson.Gson;
-//import gennadziy.model.CatFact;
-import gennadziy.model.CatFact;
-import gennadziy.model.DbInsertion;
-import gennadziy.model.Dom;
-import gennadziy.model.KursWalut;
+import com.sun.deploy.net.HttpResponse;
+import gennadziy.model.*;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,10 +21,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.Date;
 import java.util.List;
+
 @Slf4j
 @Controller
 public class MAinConrtl {
@@ -34,6 +42,8 @@ public class MAinConrtl {
     private DomRepo domRepo;
     @Autowired
     private KursyRepo kursWalut;
+    @Autowired
+    private GranicaRepo granicaRepo;
 
     @GetMapping("/")
     public String hello(Model model)throws IOException {
@@ -101,6 +111,52 @@ model.addAttribute ( "doms", doms );
         domRepo.deleteById ( id );
         return "redirect:/main";
     }
+
+
+    @PostMapping("/saveGr")
+    public String granicaSav(Model model,Granica granica) throws IOException {
+            granicaRepo.save ( granica );
+
+            return "redirect:/granica";
+
+    }
+
+    @GetMapping("/granica")
+    public String granica( Model model) throws IOException {
+        List<Granica> list=granicaRepo.findAll ();
+        model.addAttribute ( "granica",list );
+        String nameF="C:/"+new SimpleDateFormat ("yyyy-mm-dd_hh-mm-ss").format(new Date())+".jpg";
+        Image bufferimage = ImageIO.read(new URL ("http://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        ImageIO.write( (RenderedImage) bufferimage, "jpg", output );
+        byte [] data = output.toByteArray();
+        ByteArrayInputStream bis = new ByteArrayInputStream (data);
+        BufferedImage bImage2 = ImageIO.read(bis);
+        ImageIO.write(bImage2, "jpg", new File (nameF) );
+        byte[] fileContent = FileUtils.readFileToByteArray(new File(nameF));
+        String encodedString = Base64.getEncoder().encodeToString(fileContent);
+        model.addAttribute ( "data", encodedString );
+        System.out.println (encodedString );
+        return "granica";
+    }
+
+    @GetMapping("/granica/delete/{id}")
+    public String deleteGranica(@PathVariable("id" ) Long id){
+        granicaRepo.deleteById ( id );
+        return "redirect:/granica";
+    }
+
+    @GetMapping("/view/{id}")
+    public String viewGranica( @PathVariable("id" ) Long id,Granica granica, Model model) {
+            String s=granicaRepo.findById ( id ).toString ();
+        model.addAttribute ( "bytes", Optional.ofNullable(s)
+                .filter(str -> str.length() != 0)
+                .map(str -> str.substring(59, str.length() - 2))
+                .orElse(s));
+        model.addAttribute ( "granic", granicaRepo.findById ( id ) );
+        return "view";
+    }
 }
+
 
 
