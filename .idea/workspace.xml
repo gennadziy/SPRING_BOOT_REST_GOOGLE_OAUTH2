@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="032e649c-7430-41a8-be92-0b6beed2dd82" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="032e649c-7430-41a8-be92-0b6beed2dd82" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -464,7 +461,7 @@
       <workItem from="1581791332140" duration="23481000" />
       <workItem from="1581862671966" duration="595000" />
       <workItem from="1581866524144" duration="8227000" />
-      <workItem from="1581878234878" duration="46079000" />
+      <workItem from="1581878234878" duration="46340000" />
     </task>
     <task id="LOCAL-00001" summary="rest api cat sql">
       <created>1581016452737</created>
@@ -484,7 +481,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201980000" />
+    <option name="totallyTimeSpent" value="202241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
