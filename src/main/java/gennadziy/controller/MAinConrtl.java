@@ -1,4 +1,4 @@
-package gennadziy;
+package gennadziy.controller;
 
 /*
 @Author Gennadziy GITHUB/gennadziy
@@ -8,6 +8,11 @@ Time: 21:04
 */
 
 import com.google.gson.Gson;
+import gennadziy.config.DbInsertion;
+import gennadziy.dao.DomRepo;
+import gennadziy.dao.GranicaRepo;
+import gennadziy.dao.KursyRepo;
+import gennadziy.model.Dom;
 import gennadziy.model.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -86,7 +91,7 @@ public class MAinConrtl {
         return "redirect:/valut";
     }
     @PostMapping("/save")
-    public String addStudent(Dom dom,BindingResult bindingResult, Model model ) {
+    public String addStudent( Dom dom, BindingResult bindingResult, Model model ) {
         if(dom==null ){
             return "new";
         }

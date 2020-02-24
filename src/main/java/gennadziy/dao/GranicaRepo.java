@@ -1,4 +1,4 @@
-package gennadziy;
+package gennadziy.dao;
 
 import gennadziy.model.Granica;
 import org.springframework.data.jpa.repository.JpaRepository;

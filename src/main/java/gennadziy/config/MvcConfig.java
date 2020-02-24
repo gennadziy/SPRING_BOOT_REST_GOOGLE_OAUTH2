@@ -1,4 +1,4 @@
-package gennadziy;
+package gennadziy.config;
 
 /*
 @Author Gennadziy GITHUB/gennadziy
