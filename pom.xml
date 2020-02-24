@@ -11,7 +11,7 @@
 	<groupId>com.gennadziy</groupId>
 	<artifactId>FlyScanner</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>FlyScanner</name>
 	<description>Demo project for Spring Boot</description>
 

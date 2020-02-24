@@ -8,12 +8,10 @@ Time: 21:04
 */
 
 import com.google.gson.Gson;
-import com.sun.deploy.net.HttpResponse;
 import gennadziy.model.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,13 +24,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.*;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -123,7 +120,7 @@ model.addAttribute ( "doms", doms );
 
     @GetMapping("/granica")
     public String granica( Model model) throws IOException {
-        List<Granica> list=granicaRepo.findAll ();
+        List<Granica> list=granicaRepo.findAll ( );
         model.addAttribute ( "granica",list );
         String nameF="C:/"+new SimpleDateFormat ("yyyy-mm-dd_hh-mm-ss").format(new Date())+".jpg";
         Image bufferimage = ImageIO.read(new URL ("http://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));

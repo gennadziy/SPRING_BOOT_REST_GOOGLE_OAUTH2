@@ -128,13 +128,13 @@ public class DbInsertion extends Thread  {
                 String Cur_Name = jsonObject.get("Cur_Name").getAsString();
                 double Cur_OfficialRate = jsonObject.get("Cur_OfficialRate").getAsDouble ();
 
-                // Printing for debugging purposes.
-                System.out.println(id);
-                System.out.println(date);
-                System.out.println(Cur_Abbreviation);
-                System.out.println(Cur_Scale);
-                System.out.println(Cur_Name);
-                System.out.println(Cur_OfficialRate);
+//                // Printing for debugging purposes.
+//                System.out.println(id);
+//                System.out.println(date);
+//                System.out.println(Cur_Abbreviation);
+//                System.out.println(Cur_Scale);
+//                System.out.println(Cur_Name);
+//                System.out.println(Cur_OfficialRate);
 
                 // Insert statement.
                 preparedStatement.setInt (1, id);
