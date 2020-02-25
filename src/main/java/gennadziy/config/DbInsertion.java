@@ -16,7 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-@Slf4j
+//@Slf4j
 public class DbInsertion extends Thread  {
 
     // JDBC driver name and database URL local disk database.
