@@ -7,12 +7,14 @@ Date: 2020-01-31
 Time: 20:57
 */
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalTime;
-
+@Data
 @Entity
 @Table(name="dom")
 public class Dom {

@@ -12,11 +12,13 @@ import gennadziy.config.DbInsertion;
 import gennadziy.dao.DomRepo;
 import gennadziy.dao.GranicaRepo;
 import gennadziy.dao.KursyRepo;
+import gennadziy.exception.ResourceNotFoundException;
 import gennadziy.model.CatFact;
 import gennadziy.model.Dom;
 import gennadziy.model.Granica;
 import gennadziy.model.KursWalut;
 import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -73,10 +76,13 @@ public class MAinConrtl {
 
     @GetMapping("/valut")
     public  String valut(Model model){
-        List<KursWalut> kurs=kursWalut.findAll ();
+        val kurs=kursWalut.findAll ();
+        if(!kurs.isEmpty ()){
         model.addAttribute ( "kurs",kurs );
         System.out.println ( kurs);
-        return "valut";
+        return "valut";}
+        else {
+            throw new ResourceNotFoundException ("нукт такого ID : "  );}
     }
 
     @GetMapping("/valut/delete/{id}")
@@ -115,10 +121,8 @@ model.addAttribute ( "doms", doms );
         domRepo.deleteById ( id );
         return "redirect:/main";
     }
-
-
     @PostMapping("/saveGr")
-    public String granicaSav(Model model,Granica granica) throws IOException {
+    public String granicaSav(Model model,Granica granica) {
             granicaRepo.save ( granica );
 
             return "redirect:/granica";

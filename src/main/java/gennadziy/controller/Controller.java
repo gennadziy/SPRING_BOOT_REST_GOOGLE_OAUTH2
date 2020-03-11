@@ -38,7 +38,7 @@ public class Controller {
             return ResponseEntity.ok ( ).body ( domRepo.findById ( id ) );
         }
         else {
-            throw new ResourceNotFoundException ("нукт такого ID : " + id );
+            throw new ResourceNotFoundException ("нeт такого ID : " + id );
     }
 }
 }

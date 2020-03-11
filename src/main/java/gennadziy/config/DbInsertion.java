@@ -16,40 +16,24 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-//@Slf4j
+@Slf4j
 public class DbInsertion extends Thread  {
-
-    // JDBC driver name and database URL local disk database.
-    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/test?serverTimezone=Europe/Minsk&useSSL=false";
-    static final String USER = "root";
-    static final String PASSWORD = "251284251284";
-
-
     public static void main(String[] args) {
         System.out.println (getAllStackTraces ().toString ());
         URL url;
-
         try {
             //get URL content
             url = new URL("http://www.nbrb.by/api/exrates/rates/145");
             URLConnection conn = url.openConnection();
-            //http://www.nbrb.by/api/exrates/rates?periodicity=0
-            //open the stream and put it into BufferedReader
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
-
             String inputLine;
-
-            //save to this filename
             String fileName = "C:/1.json";
             File file = new File(fileName);
 
             if (!file.exists()) {
                 file.createNewFile();
             }
-
-            //use FileWriter to write file
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
 
@@ -70,9 +54,9 @@ public class DbInsertion extends Thread  {
         Connection mysqlConnection = null;
         PreparedStatement preparedStatement = null;
         try {
-            Class.forName(JDBC_DRIVER);
+            Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Connection to database...");
-            mysqlConnection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+            mysqlConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?serverTimezone=Europe/Minsk&useSSL=false", "root", "251284251284");
             String query = " insert into mytable (Cur_ID, Date, Cur_Abbreviation, Cur_Scale, Cur_Name," +
                     " cur_official_rate) values (?, ?, ?, ?, ?, ?)";
             System.out.println("Creating sql statement...");
@@ -85,7 +69,6 @@ public class DbInsertion extends Thread  {
             e.printStackTrace();
         }
     }
-
     public static void getJsonStrings(Connection mySqlConnection, PreparedStatement preparedStatement) {
         LinkedHashSet<String> jsonLineSet = new LinkedHashSet<>();
         String reviewer = null;
@@ -124,15 +107,6 @@ public class DbInsertion extends Thread  {
                 int Cur_Scale = jsonObject.get("Cur_Scale").getAsInt ();
                 String Cur_Name = jsonObject.get("Cur_Name").getAsString();
                 double Cur_OfficialRate = jsonObject.get("Cur_OfficialRate").getAsDouble ();
-
-//                // Printing for debugging purposes.
-//                System.out.println(id);
-//                System.out.println(date);
-//                System.out.println(Cur_Abbreviation);
-//                System.out.println(Cur_Scale);
-//                System.out.println(Cur_Name);
-//                System.out.println(Cur_OfficialRate);
-
                 // Insert statement.
                 preparedStatement.setInt (1, id);
                 preparedStatement.setString(2, date);
@@ -154,10 +128,4 @@ public class DbInsertion extends Thread  {
         }
     }
 
-    @Override
-    public void run () {
-        DbInsertion db = new DbInsertion ();
-        db.run ();
-        super.run ();
-    }
 }
