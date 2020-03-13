@@ -12,22 +12,20 @@ import gennadziy.config.DbInsertion;
 import gennadziy.dao.DomRepo;
 import gennadziy.dao.GranicaRepo;
 import gennadziy.dao.KursyRepo;
+import gennadziy.dao.UserRepo;
 import gennadziy.exception.ResourceNotFoundException;
-import gennadziy.model.CatFact;
-import gennadziy.model.Dom;
-import gennadziy.model.Granica;
-import gennadziy.model.KursWalut;
+import gennadziy.model.*;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -36,10 +34,8 @@ import java.awt.image.RenderedImage;
 import java.io.*;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Base64;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -51,14 +47,20 @@ public class MAinConrtl {
     private KursyRepo kursWalut;
     @Autowired
     private GranicaRepo granicaRepo;
+    @Autowired
+    private UserRepo userRepo;
 
     @GetMapping("/")
-    public String hello(Model model)throws IOException {
+    public String hello( Model model, @AuthenticationPrincipal User user )throws IOException {
         URL url=new URL ( "http://cat-fact.herokuapp.com/facts/random" );
         InputStreamReader reader=new InputStreamReader ( url.openStream () );
         CatFact catFact= new Gson ().fromJson ( reader, CatFact.class );
         String cat1=catFact.getText ();
+        HashMap<Object, Object> fronendData=new HashMap <> (  );
+        fronendData.put("profile",user);
+        fronendData.put("messages ",user);
         model.addAttribute ( "cat1",cat1 );
+        model.addAttribute ( "fronendData", fronendData );
         System.out.println (cat1);
         return "home";
     }
@@ -77,6 +79,8 @@ public class MAinConrtl {
     @GetMapping("/valut")
     public  String valut(Model model){
         val kurs=kursWalut.findAll ();
+        List<User> users=userRepo.findAll ();
+        model.addAttribute ( "users",users );
         if(!kurs.isEmpty ()){
         model.addAttribute ( "kurs",kurs );
         System.out.println ( kurs);

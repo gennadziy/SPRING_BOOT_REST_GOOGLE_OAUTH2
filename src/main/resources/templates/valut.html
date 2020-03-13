@@ -49,6 +49,36 @@
     </tr>
     </tbody>
 </table>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<table border="1" class="table table-bordered table-hover horizontal-align">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>Last Visit</th>
+        <th>Name</th>
+        <th>User Pict</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user: ${users}">
+        <td th:text="${user.id}" ></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.gender}"></td>
+        <td th:text="${user.lastVisit}"></td>
+        <td th:text="${user.userpic}"></td>
+        <td th:text="${user.name}"></td>
+        <!--<td><a th:href="@{/valut/delete/{id}(id=${kursWalut.curID})}">Delete</a></td>-->
+    </tr>
+    </tbody>
+</table>
+
 <form  th:action="@{/main}">
     <button type="submit"  value="HOME">HOME</button>
 </form>

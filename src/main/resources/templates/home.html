@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <title>HOME PAGE</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<h1>Welcome!</h1>
-
-
+<div id="app">
+    {{ message }}
+</div>
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+<div id="app-3">
+    <span v-if="seen">Now you see me</span>
+</div>
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+<script src="/js/main.js"></script>
+<p></p>
+<p></p>
+<p></p>
 HELLO REST API WITH
 http://cat-fact.herokuapp.com/#/
-
 <p  th:text="${cat1}" />
-<p>Click <a th:href="@{/main}"> ZALOGUJ </a> </p>
+<p>Click <a th:href="@{/main}"> ZALOGUJ SIĘ PRZEZ GOOGLE </a> </p>
 <p>Click <a th:href="@{/api/all}"> REST API(all) </a> </p>
+<p>Click <a th:href="@{/valut}"> KURS $$$ </a> </p>
+
 
 </body>
 </html>
