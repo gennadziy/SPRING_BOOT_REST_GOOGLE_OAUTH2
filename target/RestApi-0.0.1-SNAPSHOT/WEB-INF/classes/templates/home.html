@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>HOME PAGE</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<script src="static/js/main.js"></script>
+
+HELLO REST API WITH
+http://cat-fact.herokuapp.com/#/
+<p  th:text="${cat1}" />
+<p>Click <a th:href="@{/main}"> ZALOGUJ SIĘ PRZEZ GOOGLE </a> </p>
+<p>Click <a th:href="@{/api/all}"> REST API(all) </a> </p>
+<p>Click <a th:href="@{/valut}"> KURS $$$ </a> </p>
+
+
+</body>
+</html>
