@@ -22,7 +22,7 @@ var app4 = new Vue({
         todos: [
             { text: 'Learn JavaScript' },
             { text: 'Learn Vue' },
-            { text: 'Build something awesome' }
+            { text: 'Build something awesome' },
         ]
     }
 })

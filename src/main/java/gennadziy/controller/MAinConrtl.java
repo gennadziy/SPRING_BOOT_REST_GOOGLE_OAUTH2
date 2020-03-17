@@ -42,7 +42,9 @@ import java.util.List;
 public class MAinConrtl {
 
     @Autowired
+    @Deprecated
     private DomRepo domRepo;
+
     @Autowired
     private KursyRepo kursWalut;
     @Autowired

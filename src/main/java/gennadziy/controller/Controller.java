@@ -21,6 +21,12 @@ public class Controller {
     @Autowired
     private DomService domService;
 
+
+    @RequestMapping("/12/{id}")
+    public ResponseEntity <Dom> getOne(@PathVariable("id") Long id){
+        Dom dom=domRepo.findById ( id ).orElseThrow (()-> new ResourceNotFoundException ( "NOT FOUND ID ///" ));
+        return ResponseEntity.ok (  ).body ( dom );
+    }
     @RequestMapping(value = "/api/all")
     public ResponseEntity<List <Dom>> getAll ( Long id ) {
         //        Gson json = new Gson ();

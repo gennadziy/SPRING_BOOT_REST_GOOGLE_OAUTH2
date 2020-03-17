@@ -7,13 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
-/*
-@Author Gennadziy GITHUB/gennadziy
-Class name: DomServiceImpl
-Date: 2020-02-24
-Time: 19:18
-*/
 
 @Service
 @Transactional
@@ -24,5 +19,14 @@ public class DomServiceImpl implements DomService {
     @Override
     public List<Dom> getAllDom () {
         return this.domRepo.findAll ();
+    }
+
+    @Override
+    public Optional <Dom> getId ( Long id ) throws ReflectiveOperationException {
+        Optional <Dom> dom=domRepo.findById ( id );
+        if(dom==null){
+            throw new ReflectiveOperationException (  );
+        }
+        return dom;
     }
 }

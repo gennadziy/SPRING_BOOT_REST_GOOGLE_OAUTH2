@@ -1,11 +1,5 @@
 package gennadziy.model;
 
-/*
-@Author Gennadziy GITHUB/gennadziy
-Class name: Dom
-Date: 2020-01-31
-Time: 20:57
-*/
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,25 +17,20 @@ public class Dom {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
-   @Column(name = "fact")
+    @Column(name = "fact")
     private String cat1;
+
     @Column
     @NotEmpty(message = "not empty")
     private String name;
-
-
 
     private LocalTime date;
     public String getName () {
         return name;
     }
-
     public void setName ( String name ) {
         this.name = name;
     }
-
-
 
     public LocalTime getDate () {
         return date;
