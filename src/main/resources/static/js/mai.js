@@ -1,3 +1,7 @@
+Vue.component('prod', {
+    template:`<h1> {{ mes }}</h1>`
+})
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -24,5 +28,14 @@ var app4 = new Vue({
             { text: 'Learn Vue' },
             { text: 'Build something awesome' },
         ]
+    }
+})
+
+
+
+var app5 = new Vue ({
+    el: '#app-5',
+    data: {
+
     }
 })

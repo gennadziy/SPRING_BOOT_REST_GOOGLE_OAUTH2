@@ -6,9 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 </head>
 <body>
+
 <div id="app">
-    {{ message }}
+    {{ ${cat1} }}
 </div>
+<prod mes="HELLO WOORRLLLDL"></prod>
 <div id="app-2">
   <span v-bind:title="message">
     Hover your mouse over me for a few seconds
@@ -21,7 +23,7 @@
 <div id="app-4">
     <ol>
         <li v-for="todo in todos">
-            {{ todo.text }}
+            {{ todo.text}}
         </li>
     </ol>
 </div>

@@ -17,7 +17,7 @@ public class CatFact {
     private String type;
 
     @Override
-    public String toString () {
+    public String toString() {
         return "CatFact{" +
                 "used=" + used +
                 ", source='" + source + '\'' +

@@ -7195,9 +7195,23 @@
     </style>
 </head>
 <body>
+<img src="http://www.brest.customs.gov.by/webcam/brst112_c1.jpg" alt="Granica" >
 
 <table border="1" class="table table-bordered table-hover horizontal-align">
-    <thead>
+    <form  th:action="@{/saveGr}" th:object="${granica}"   method="post">
+        <div class="form-group col-md-8">
+        </div>
+        <div class="form-group">
+            <input type="date" readonly id="date" th:name="date" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" />
+
+            <input type="time" readonly id="time1" th:name="time" th:value="${#dates.format(#dates.createNow(), 'HH:mm')}" />
+
+            <input type="hidden"  readonly id="bytes" th:name="bytes"  th:value="${data}" />
+        </div>
+
+        <button type="submit" >Add</button>
+
+        <thead>
     <tr>
         <th>curID</th>
         <th>Date</th>
@@ -7216,23 +7230,9 @@
     </tr>
     </tbody>
 </table>
-<p></p>
-<img src="http://www.brest.customs.gov.by/webcam/brst112_c1.jpg" alt="Granica" >
 <!--<form  th:action="@{/main}">-->
 <!--<button type="submit"  value="HOME">HOME</button>-->
 </form>
-<form  th:action="@{/saveGr}" th:object="${granica}"   method="post">
-    <div class="form-group col-md-8">
-    </div>
-    <div class="form-group">
-        <input type="date" readonly id="date" th:name="date" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" />
-
-        <input type="time" readonly id="time1" th:name="time" th:value="${#dates.format(#dates.createNow(), 'HH:mm')}" />
-
-        <input type="hidden"  readonly id="bytes" th:name="bytes"  th:value="${data}" />
-    </div>
-
-    <button type="submit" >Add</button>
 
 </form>
 </body>

@@ -1,6 +1,7 @@
 package gennadziy.model;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -8,9 +9,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalTime;
+
 @Data
 @Entity
-@Table(name="dom")
+@AllArgsConstructor
+@Table(name = "dom")
 public class Dom {
 
     @Id
@@ -25,28 +28,31 @@ public class Dom {
     private String name;
 
     private LocalTime date;
-    public String getName () {
+
+    public String getName() {
         return name;
     }
-    public void setName ( String name ) {
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    public LocalTime getDate () {
+    public LocalTime getDate() {
         return date;
     }
+
     @Column(name = "date")
     @DateTimeFormat(pattern = "HH:dd")
-    public LocalTime getDate1 (LocalTime localTime) {
-        return  localTime.now ();
+    public LocalTime getDate1(LocalTime localTime) {
+        return localTime.now();
     }
 
-    public void setDate ( LocalTime date ) {
+    public void setDate(LocalTime date) {
         this.date = date;
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return "Dom{" +
                 "id=" + id +
                 ", cat1='" + cat1 + '\'' +
@@ -55,25 +61,25 @@ public class Dom {
                 '}';
     }
 
-    public String getCat1 () {
+    public String getCat1() {
         return cat1;
     }
 
-    public void setCat1 ( String cat1 ) {
+    public void setCat1(String cat1) {
         this.cat1 = cat1;
     }
 
-    public Long getId () {
+    public Long getId() {
 
         return id;
 
     }
 
-    public void setId ( Long id ) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Dom () {
+    public Dom() {
 
     }
 }

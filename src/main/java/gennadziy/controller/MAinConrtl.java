@@ -32,6 +32,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -53,121 +54,125 @@ public class MAinConrtl {
     private UserRepo userRepo;
 
     @GetMapping("/")
-    public String hello( Model model, @AuthenticationPrincipal User user )throws IOException {
-        URL url=new URL ( "http://cat-fact.herokuapp.com/facts/random" );
-        InputStreamReader reader=new InputStreamReader ( url.openStream () );
-        CatFact catFact= new Gson ().fromJson ( reader, CatFact.class );
-        String cat1=catFact.getText ();
-        HashMap<Object, Object> fronendData=new HashMap <> (  );
-        fronendData.put("profile",user);
-        fronendData.put("messages ",user);
-        model.addAttribute ( "cat1",cat1 );
-        model.addAttribute ( "fronendData", fronendData );
-        System.out.println (cat1);
+    public String hello(Model model, @AuthenticationPrincipal User user) throws IOException {
+        URL url = new URL("http://cat-fact.herokuapp.com/facts/random");
+        InputStreamReader reader = new InputStreamReader(url.openStream());
+        CatFact catFact = new Gson().fromJson(reader, CatFact.class);
+        String cat1 = catFact.getText();
+        HashMap<Object, Object> fronendData = new HashMap<>();
+        fronendData.put("profile", user);
+        fronendData.put("messages ", user);
+        model.addAttribute("cat1", cat1);
+        model.addAttribute("fronendData", fronendData);
+        System.out.println(cat1);
+        model.addAttribute("mess", "HELROP");
         return "home";
     }
 
     @GetMapping("/new")
-    public  String addDom(Model model) throws IOException{
-        URL url=new URL ( "http://cat-fact.herokuapp.com/facts/random" );
-        InputStreamReader reader=new InputStreamReader ( url.openStream () );
-        CatFact catFact1= new Gson ().fromJson ( reader, CatFact.class );
-        String cat2=catFact1.getText ();
-        model.addAttribute ( "cat2",cat2 );
-        System.out.println (cat2);
+    public String addDom(Model model) throws IOException {
+        URL url = new URL("http://cat-fact.herokuapp.com/facts/random");
+        InputStreamReader reader = new InputStreamReader(url.openStream());
+        CatFact catFact1 = new Gson().fromJson(reader, CatFact.class);
+        String cat2 = catFact1.getText();
+        model.addAttribute("cat2", cat2);
+        System.out.println(cat2);
         return "new";
     }
 
     @GetMapping("/valut")
-    public  String valut(Model model){
-        val kurs=kursWalut.findAll ();
-        List<User> users=userRepo.findAll ();
-        model.addAttribute ( "users",users );
-        if(!kurs.isEmpty ()){
-        model.addAttribute ( "kurs",kurs );
-        System.out.println ( kurs);
-        return "valut";}
-        else {
-            throw new ResourceNotFoundException ("нукт такого ID : "  );}
+    public String valut(Model model) {
+        val kurs = kursWalut.findAll();
+        List<User> users = userRepo.findAll();
+        model.addAttribute("users", users);
+        if (!kurs.isEmpty()) {
+            model.addAttribute("kurs", kurs);
+            System.out.println(kurs);
+            return "valut";
+        } else {
+            throw new ResourceNotFoundException("нукт такого ID : ");
+        }
     }
 
     @GetMapping("/valut/delete/{id}")
-    public  String addValut(@PathVariable("id") Integer id, KursWalut kursWalut1){
-       kursWalut.deleteById ( id );
+    public String addValut(@PathVariable("id") Integer id) {
+        kursWalut.deleteById(id);
         return "redirect:/valut";
     }
 
 
     @PostMapping("/add")
-    public String addW( Model model ) {
-        Model model1 = model.addAttribute ( "db", new DbInsertion () );
+    public String addW(Model model) {
+        Model model1 = model.addAttribute("db", new DbInsertion());
         log.info("POST ZAPROS");
         return "redirect:/valut";
     }
+
     @PostMapping("/save")
-    public String addStudent( Dom dom, BindingResult bindingResult, Model model ) {
-        if(dom==null ){
+    public String addStudent(Dom dom, BindingResult bindingResult) {
+        if (dom == null) {
             return "new";
         }
-        if (bindingResult.hasErrors ( )) {
+        if (bindingResult.hasErrors()) {
             return "new";
         }
-        domRepo.save ( dom );
+        domRepo.save(dom);
         return "redirect:/main";
     }
 
     @GetMapping("/main")
-    public String listDom(Model model){
-        List<Dom> doms=domRepo.findAll ();
-model.addAttribute ( "doms", doms );
+    public String listDom(Model model) {
+        List<Dom> doms = domRepo.findAll();
+        model.addAttribute("doms", doms);
         return "index";
     }
+
     @GetMapping("/delete/{id}")
-    public String deleteDom(@PathVariable("id" ) Long id, Dom dom){
-        domRepo.deleteById ( id );
+    public String deleteDom(@PathVariable("id") Long id, Dom dom) {
+        domRepo.deleteById(id);
         return "redirect:/main";
     }
+
     @PostMapping("/saveGr")
-    public String granicaSav(Model model,Granica granica) {
-            granicaRepo.save ( granica );
+    public String granicaSav(Model model, Granica granica) {
+        granicaRepo.save(granica);
 
-            return "redirect:/granica";
-
+        return "redirect:/granica";
     }
 
     @GetMapping("/granica")
-    public String granica( Model model) throws IOException {
-        List<Granica> list=granicaRepo.findAll ( );
-        model.addAttribute ( "granica",list );
-        String nameF="C:/"+new SimpleDateFormat ("yyyy-mm-dd_hh-mm-ss").format(new Date())+".jpg";
-        Image bufferimage = ImageIO.read(new URL ("http://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));
+    public String granica(Model model) throws IOException {
+        List<Granica> list = granicaRepo.findAll();
+        model.addAttribute("granica", list);
+        String nameF = "D:/" + new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss").format(new Date()) + ".jpg";
+        Image bufferimage = ImageIO.read(new URL("https://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));
         ByteArrayOutputStream output = new ByteArrayOutputStream();
-        ImageIO.write( (RenderedImage) bufferimage, "jpg", output );
-        byte [] data = output.toByteArray();
-        ByteArrayInputStream bis = new ByteArrayInputStream (data);
+        ImageIO.write((RenderedImage) bufferimage, "jpg", output);
+        byte[] data = output.toByteArray();
+        ByteArrayInputStream bis = new ByteArrayInputStream(data);
         BufferedImage bImage2 = ImageIO.read(bis);
-        ImageIO.write(bImage2, "jpg", new File (nameF) );
+        ImageIO.write(bImage2, "jpg", new File(nameF));
         byte[] fileContent = FileUtils.readFileToByteArray(new File(nameF));
         String encodedString = Base64.getEncoder().encodeToString(fileContent);
-        model.addAttribute ( "data", encodedString );
-        System.out.println (encodedString );
+        model.addAttribute("data", encodedString);
+        System.out.println(encodedString);
         return "granica";
     }
 
     @GetMapping("/granica/delete/{id}")
-    public String deleteGranica(@PathVariable("id" ) Long id){
-        granicaRepo.deleteById ( id );
+    public String deleteGranica(@PathVariable("id") Long id) {
+        granicaRepo.deleteById(id);
         return "redirect:/granica";
     }
 
     @GetMapping("/view/{id}")
-    public String viewGranica( @PathVariable("id" ) Long id,Granica granica, Model model) {
-            String s=granicaRepo.findById ( id ).toString ();
-        model.addAttribute ( "bytes", Optional.ofNullable(s)
+    public String viewGranica(@PathVariable("id") Long id, Granica granica, Model model) {
+        String s = granicaRepo.findById(id).toString();
+        model.addAttribute("bytes", Optional.ofNullable(s)
                 .filter(str -> str.length() != 0)
                 .map(str -> str.substring(59, str.length() - 2))
                 .orElse(s));
-        model.addAttribute ( "granic", granicaRepo.findById ( id ) );
+        model.addAttribute("granic", granicaRepo.findById(id));
         return "view";
     }
 }

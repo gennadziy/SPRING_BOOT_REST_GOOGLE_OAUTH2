@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface DomService {
     List<Dom> getAllDom();
-    public Optional <Dom> getId( Long id) throws ReflectiveOperationException;
+    Optional <Dom> getId( Long id) throws ReflectiveOperationException;
 }

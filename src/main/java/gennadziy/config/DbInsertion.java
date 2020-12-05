@@ -17,18 +17,18 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 @Slf4j
-public class DbInsertion extends Thread  {
+public class DbInsertion extends Thread {
     public static void main(String[] args) {
-        System.out.println (getAllStackTraces ().toString ());
+//        System.out.println (getAllStackTraces ().toString ());
         URL url;
         try {
             //get URL content
-            url = new URL("http://www.nbrb.by/api/exrates/rates/145");
+            url = new URL("http://www.nbrb.by/api/exrates/rates/931");
             URLConnection conn = url.openConnection();
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
             String inputLine;
-            String fileName = "C:/1.json";
+            String fileName = "D:/1.json";
             File file = new File(fileName);
 
             if (!file.exists()) {
@@ -45,6 +45,7 @@ public class DbInsertion extends Thread  {
             br.close();
 
             System.out.println("Done");
+            System.out.println();
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -65,17 +66,18 @@ public class DbInsertion extends Thread  {
             getJsonStrings(mysqlConnection, preparedStatement);
             preparedStatement.close();
             mysqlConnection.close();
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public static void getJsonStrings(Connection mySqlConnection, PreparedStatement preparedStatement) {
         LinkedHashSet<String> jsonLineSet = new LinkedHashSet<>();
         String reviewer = null;
         try {
-            FileInputStream inputStream = new FileInputStream( "C://1.json" );
+            FileInputStream inputStream = new FileInputStream("D://1.json");
             Scanner sc = new Scanner(inputStream);
-            while(sc.hasNextLine()) {
+            while (sc.hasNextLine()) {
                 for (int i = 0; i < 1; i++) {
                     if (sc.hasNextLine()) {
                         reviewer = sc.nextLine();
@@ -89,33 +91,33 @@ public class DbInsertion extends Thread  {
                 insertData(mySqlConnection, preparedStatement, jsonLineSet);
             }
             sc.close();
-        }catch(IOException ie) {
+        } catch (IOException ie) {
             ie.printStackTrace();
         }
     }
 
     public static void insertData(Connection mySqlConnection,
                                   PreparedStatement preparedStatement, LinkedHashSet<String> jsonLineSet) {
-        for(String jsonLine : jsonLineSet) {
+        for (String jsonLine : jsonLineSet) {
             try {
                 System.out.println("Executing query...");
                 JsonElement jsonElement = new JsonParser().parse(jsonLine);
                 JsonObject jsonObject = jsonElement.getAsJsonObject();
-                int id = jsonObject.get("Cur_ID").getAsInt ();
+                int id = jsonObject.get("Cur_ID").getAsInt();
                 String date = jsonObject.get("Date").getAsString();
                 String Cur_Abbreviation = jsonObject.get("Cur_Abbreviation").getAsString();
-                int Cur_Scale = jsonObject.get("Cur_Scale").getAsInt ();
+                int Cur_Scale = jsonObject.get("Cur_Scale").getAsInt();
                 String Cur_Name = jsonObject.get("Cur_Name").getAsString();
-                double Cur_OfficialRate = jsonObject.get("Cur_OfficialRate").getAsDouble ();
+                double Cur_OfficialRate = jsonObject.get("Cur_OfficialRate").getAsDouble();
                 // Insert statement.
-                preparedStatement.setInt (1, id);
+                preparedStatement.setInt(1, id);
                 preparedStatement.setString(2, date);
                 preparedStatement.setString(3, Cur_Abbreviation);
-                preparedStatement.setInt (4, Cur_Scale);
+                preparedStatement.setInt(4, Cur_Scale);
                 preparedStatement.setString(5, Cur_Name);
-                preparedStatement.setDouble (6, Cur_OfficialRate);
+                preparedStatement.setDouble(6, Cur_OfficialRate);
                 preparedStatement.addBatch();
-            }catch(SQLException se) {
+            } catch (SQLException se) {
                 se.printStackTrace();
             }
         }
@@ -123,7 +125,7 @@ public class DbInsertion extends Thread  {
             preparedStatement.executeBatch();
             mySqlConnection.commit();
             preparedStatement.clearBatch();
-        }catch(SQLException se) {
+        } catch (SQLException se) {
             se.printStackTrace();
         }
     }

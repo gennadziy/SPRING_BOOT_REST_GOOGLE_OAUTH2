@@ -14,9 +14,9 @@ Date: 2020-02-15
 Time: 19:48
 */
 @Entity
-@Table(name="granica")
+@Table(name = "granica")
 @Data
-public class Granica{
+public class Granica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,8 +25,8 @@ public class Granica{
 
     @Column(name = "time")
     @DateTimeFormat(pattern = "HH:dd")
-    public LocalTime getDate1 (LocalTime localTime) {
-        return  localTime.now ();
+    public LocalTime getDate1(LocalTime localTime) {
+        return localTime.now();
     }
 
     private LocalTime time;
@@ -37,6 +37,6 @@ public class Granica{
 
 
     @Column
-    private String  bytes;
+    private String bytes;
 
 }
