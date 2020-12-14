@@ -8,17 +8,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-/*
-@Author Gennadziy GITHUB/gennadziy
-Class name: test
-Date: 2t
-020-10-17
-Time: 10:18
-*/
+
 public class test {
-    public static void main ( String[] args ) {
+    public static void main(String[] args) {
         double d = 45.4654654;
-        System.out.format ("%1000.4f",d);
+        System.out.format("%1000.4f", d);
 
     }
 }

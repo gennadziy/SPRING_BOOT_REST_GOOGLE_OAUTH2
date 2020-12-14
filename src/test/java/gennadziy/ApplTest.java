@@ -9,14 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class ApplTest {
 
     @BeforeEach
-    void setUp () {
+    void setUp() {
     }
 
     @AfterEach
-    void tearDown () {
+    void tearDown() {
     }
 
     @Test
-    void main () {
+    void main() {
     }
 }
