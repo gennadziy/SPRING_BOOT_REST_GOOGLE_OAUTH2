@@ -9,20 +9,15 @@
 <p>Click <a th:href="@{/api/all}"> REST API(all) </a></p>
 
 <p></p>
-<select>
-    <option th:value="154" th:text="RUR_RUBLE"></option>
-    <option th:text="USD_DOLLAR" th:action="@{/main}"> asd</option>
-    <option th:value="'F'" th:text="PLN_ZŁOTY   "></option>
-    <option th:value="154" th:text="RUR_RUBLE"></option>
-    <option th:value="145" th:text="USD_DOLLAR"> asd</option>
-    <option th:value="'F'" th:text="PLN_ZŁOTY   "></option>
-    <option th:value="154" th:text="RUR_RUBLE"></option>
-    <option th:value="145" th:text="USD_DOLLAR"> asd</option>
-    <option th:value="'F'" th:text="PLN_ZŁOTY   "></option>
-    <option th:value="154" th:text="RUR_RUBLE"></option>
-    <option th:value="145" th:text="USD_DOLLAR"> asd</option>
-    <option th:value="'F'" th:text="PLN_ZŁOTY   "></option>
-</select>
+<form name="form1" method="get" action="/valut">
+    <input type="Submit"  name=submit th:value="${dbb}">
+    <input type="Submit"  name=submit th:value="${dbb1}">
+</form>
+<!--<select>-->
+<!--    <option th:value="${dbb}" th:text="RUR_RUBLE"></option>-->
+<!--    -->
+<!--</select>-->
+
 
 <p></p>
 <table border="1" class="table table-bordered table-hover horizontal-align">

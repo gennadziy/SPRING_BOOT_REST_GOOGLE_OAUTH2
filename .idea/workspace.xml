@@ -4,58 +4,50 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="032e649c-7430-41a8-be92-0b6beed2dd82" name="Default" comment="I'm lazy">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/DbInsertion.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a1a6389d-e4ee-4865-8611-72bfb51f6543.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a1a6389d-e4ee-4865-8611-72bfb51f6543.xml" afterDir="false" />
+    <list default="true" id="032e649c-7430-41a8-be92-0b6beed2dd82" name="Default" comment="------">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/DbInsertion.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/Appl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/Appl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/config/DbInsertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/DbInsertion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/config/WebSecurtyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/WebSecurtyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/controller/MAinConrtl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/controller/MAinConrtl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/dao/DomRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/DomRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/dao/GranicaRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/GranicaRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/dao/KursyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/KursyRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/dao/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/mAIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/mAIN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/model/CatFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/CatFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/model/Dom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/Dom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/model/Granica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/Granica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/model/KursWalut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/KursWalut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/model/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/service/DomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/service/DomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/service/DomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/service/DomServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gennadziy/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/mai.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/static/js/mai.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/static/js/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error11.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/error11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/granica.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/granica.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/valut.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/valut.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/resources/templates/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gennadziy/ApplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gennadziy/mAINTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/Appl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/Appl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/DbInsertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/config/DbInsertion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/config/WebSecurtyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/config/WebSecurtyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/controller/MAinConrtl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/controller/MAinConrtl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/DomRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/dao/DomRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/GranicaRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/dao/GranicaRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/KursyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/dao/KursyRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/dao/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/dao/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/mAIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/mAIN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/CatFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/model/CatFact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/Dom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/model/Dom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/Granica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/model/Granica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/KursWalut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/model/KursWalut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/model/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/service/DomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/service/DomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/service/DomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/service/DomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/java/gennadziy/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gennadziy/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/static/js/mai.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/mai.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/static/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/error11.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/granica.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/granica.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/valut.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/valut.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/Appl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/Appl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/config/DbInsertion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/config/DbInsertion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/config/WebSecurtyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/config/WebSecurtyConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/controller/Controller.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/controller/MAinConrtl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/controller/MAinConrtl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/model/Dom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/model/Dom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/model/Granica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/model/Granica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gennadziy/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gennadziy/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/gennadziy/ApplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/gennadziy/mAINTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/valut.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/valut.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -469,50 +461,23 @@
       <recent name="gennadziy" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DbInsertion">
+  <component name="RunManager" selected="Spring Boot.Appl">
+    <configuration name="DbInsertion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gennadziy.config.DbInsertion" />
+      <module name="RestApi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gennadziy.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mAIN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gennadziy.mAIN" />
-      <module name="Tset" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gennadziy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gennadziy.test" />
-      <module name="Tset" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gennadziy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -524,24 +489,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mAINTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tset" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gennadziy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gennadziy" />
-      <option name="MAIN_CLASS_NAME" value="gennadziy.mAINTest" />
-      <option name="METHOD_NAME" value="main" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    <configuration name="Appl" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="RestApi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="gennadziy.Appl" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Appl (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="Appl" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="RestApi" />
       <extension name="coverage">
         <pattern>
@@ -549,13 +504,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="gennadziy.Appl" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Appl" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="Tset" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="gennadziy.Appl" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -572,19 +520,11 @@
     </configuration>
     <list>
       <item itemvalue="Application.DbInsertion" />
-      <item itemvalue="Application.mAIN" />
-      <item itemvalue="Application.test" />
-      <item itemvalue="JUnit.mAINTest.main" />
       <item itemvalue="Spring Boot.Appl" />
-      <item itemvalue="Spring Boot.Appl (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Appl (1)" />
         <item itemvalue="Application.DbInsertion" />
-        <item itemvalue="Application.test" />
-        <item itemvalue="Application.mAIN" />
-        <item itemvalue="JUnit.mAINTest.main" />
       </list>
     </recent_temporary>
   </component>
@@ -684,7 +624,10 @@
       <workItem from="1607167877378" duration="63000" />
       <workItem from="1607452608730" duration="1202000" />
       <workItem from="1607871222455" duration="1278000" />
-      <workItem from="1614930707490" duration="9636000" />
+      <workItem from="1614930707490" duration="11856000" />
+      <workItem from="1615188592628" duration="5210000" />
+      <workItem from="1615197806232" duration="13000" />
+      <workItem from="1615197833248" duration="3432000" />
     </task>
     <task id="LOCAL-00001" summary="rest api cat sql">
       <created>1581016452737</created>
@@ -749,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607158994448</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="------">
+      <created>1615186104788</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615186104788</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -845,7 +795,8 @@
     <MESSAGE value="added VUE.JS" />
     <MESSAGE value="added" />
     <MESSAGE value="I'm lazy" />
-    <option name="LAST_COMMIT_MESSAGE" value="I'm lazy" />
+    <MESSAGE value="------" />
+    <option name="LAST_COMMIT_MESSAGE" value="------" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

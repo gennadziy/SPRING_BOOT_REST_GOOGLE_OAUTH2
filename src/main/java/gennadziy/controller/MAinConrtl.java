@@ -53,6 +53,8 @@ public class MAinConrtl {
     @Autowired
     private UserRepo userRepo;
 
+
+
     @GetMapping("/")
     public String hello(Model model, @AuthenticationPrincipal User user) throws IOException {
         URL url = new URL("http://cat-fact.herokuapp.com/facts/random");
@@ -81,7 +83,10 @@ public class MAinConrtl {
     }
 
     @GetMapping("/valut")
-    public String valut(Model model) {
+    public String valut(Model model, DbInsertion db) {
+        model.addAttribute("dbb", db.main());
+        model.addAttribute("dbb1", db.main1());
+
         val kurs = kursWalut.findAll();
         List<User> users = userRepo.findAll();
         model.addAttribute("users", users);
@@ -90,7 +95,7 @@ public class MAinConrtl {
             System.out.println(kurs);
             return "valut";
         } else {
-            throw new ResourceNotFoundException("нукт такого ID : ");
+            throw new ResourceNotFoundException("нет такого ID : ");
         }
     }
 
@@ -133,6 +138,7 @@ public class MAinConrtl {
         return "redirect:/main";
     }
 
+
     @PostMapping("/saveGr")
     public String granicaSav(Model model, Granica granica) {
         granicaRepo.save(granica);
@@ -144,7 +150,7 @@ public class MAinConrtl {
     public String granica(Model model) throws IOException {
         List<Granica> list = granicaRepo.findAll();
         model.addAttribute("granica", list);
-        String nameF = "C:/Users/Marcin/Pictures" + new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss").format(new Date()) + ".jpg";
+        String nameF = "c:/Users/Marcin/Pictures/" + new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss").format(new Date()) + ".jpg";
         Image bufferimage = ImageIO.read(new URL("https://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         ImageIO.write((RenderedImage) bufferimage, "jpg", output);

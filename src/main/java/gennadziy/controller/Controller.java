@@ -1,4 +1,4 @@
-package gennadziy.controller;
+package main.java.gennadziy.controller;
 
 import gennadziy.dao.DomRepo;
 import gennadziy.service.DomService;
