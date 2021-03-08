@@ -144,7 +144,7 @@ public class MAinConrtl {
     public String granica(Model model) throws IOException {
         List<Granica> list = granicaRepo.findAll();
         model.addAttribute("granica", list);
-        String nameF = "D:/" + new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss").format(new Date()) + ".jpg";
+        String nameF = "C:/Users/Marcin/Pictures" + new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss").format(new Date()) + ".jpg";
         Image bufferimage = ImageIO.read(new URL("https://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         ImageIO.write((RenderedImage) bufferimage, "jpg", output);

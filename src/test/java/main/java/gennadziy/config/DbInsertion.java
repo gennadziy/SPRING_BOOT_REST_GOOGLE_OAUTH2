@@ -23,15 +23,16 @@ public class DbInsertion extends Thread {
         URL url;
         try {
             //get URL content
-            url = new URL("http://www.nbrb.by/api/exrates/rates/931");
+            url = new URL("http://www.nbrb.by/api/exrates/rates/145");
             URLConnection conn = url.openConnection();
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
             String inputLine;
-            String fileName = "D:/1.json";
+            String fileName = "C:/Users/Marcin/Pictures/1.json";
             File file = new File(fileName);
 
-            if (!file.exists()) {
+            if (file.exists()) {
+                file.delete();
                 file.createNewFile();
             }
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
@@ -57,15 +58,18 @@ public class DbInsertion extends Thread {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Connection to database...");
-            mysqlConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?serverTimezone=Europe/Minsk&useSSL=false", "root", "251284251284");
+            mysqlConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?serverTimezone=Europe/Minsk&useSSL=false", "root", "root");
             String query = " insert into mytable (Cur_ID, Date, Cur_Abbreviation, Cur_Scale, Cur_Name," +
-                    " cur_official_rate) values (?, ?, ?, ?, ?, ?)";
+                    " cur_official_rate) values (?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE Cur_ID = Cur_ID";
+//           String query = "  ON DUPLICATE KEY UPDATE ";
             System.out.println("Creating sql statement...");
+            System.out.println("**********");
             preparedStatement = mysqlConnection.prepareStatement(query);
             mysqlConnection.setAutoCommit(false);
             getJsonStrings(mysqlConnection, preparedStatement);
             preparedStatement.close();
             mysqlConnection.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,7 +79,7 @@ public class DbInsertion extends Thread {
         LinkedHashSet<String> jsonLineSet = new LinkedHashSet<>();
         String reviewer = null;
         try {
-            FileInputStream inputStream = new FileInputStream("D://1.json");
+            FileInputStream inputStream = new FileInputStream("C:/Users/Marcin/Pictures/1.json");
             Scanner sc = new Scanner(inputStream);
             while (sc.hasNextLine()) {
                 for (int i = 0; i < 1; i++) {

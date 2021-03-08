@@ -6,12 +6,12 @@
 </head>
 <body>
 <p></p>
-<p>Click <a th:href="@{/api/all}"> REST API(all) </a> </p>
+<p>Click <a th:href="@{/api/all}"> REST API(all) </a></p>
 
 <p></p>
-<select >
+<select>
     <option th:value="154" th:text="RUR_RUBLE"></option>
-    <option  th:text="USD_DOLLAR" th:action="@{/main}"> asd</option>
+    <option th:text="USD_DOLLAR" th:action="@{/main}"> asd</option>
     <option th:value="'F'" th:text="PLN_ZŁOTY   "></option>
     <option th:value="154" th:text="RUR_RUBLE"></option>
     <option th:value="145" th:text="USD_DOLLAR"> asd</option>
@@ -39,7 +39,7 @@
     </thead>
     <tbody>
     <tr th:each="kursWalut: ${kurs}">
-        <td th:text="${kursWalut.curID}" ></td>
+        <td th:text="${kursWalut.curID}"></td>
         <td th:text="${kursWalut.date}"></td>
         <td th:text="${kursWalut.curAbbreviation}"></td>
         <td th:text="${kursWalut.curScale}"></td>
@@ -68,7 +68,7 @@
     </thead>
     <tbody>
     <tr th:each="user: ${users}">
-        <td th:text="${user.id}" ></td>
+        <td th:text="${user.id}"></td>
         <td th:text="${user.email}"></td>
         <td th:text="${user.gender}"></td>
         <td th:text="${user.lastVisit}"></td>
@@ -79,8 +79,8 @@
     </tbody>
 </table>
 
-<form  th:action="@{/main}">
-    <button type="submit"  value="HOME">HOME</button>
+<form th:action="@{/main}">
+    <button type="submit" value="HOME">HOME</button>
 </form>
 </body>
 </html>
