@@ -4,6 +4,9 @@ import gennadziy.dao.UserRepo;
 import gennadziy.model.User;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,6 +19,7 @@ import java.time.LocalDateTime;
 @Configuration
 @EnableWebSecurity
 @EnableOAuth2Sso
+@EnableCaching
 public class WebSecurtyConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -27,6 +31,10 @@ public class WebSecurtyConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessUrl("/").permitAll()
                 .and()
                 .csrf().disable();
+    }
+    @Bean
+    public CacheManager cacheManager() {
+        return new ConcurrentMapCacheManager("mytable");
     }
 
     @Bean

@@ -14,7 +14,10 @@ import gennadziy.dao.GranicaRepo;
 import gennadziy.dao.KursyRepo;
 import gennadziy.dao.UserRepo;
 import gennadziy.exception.ResourceNotFoundException;
-import gennadziy.model.*;
+import gennadziy.model.CatFact;
+import gennadziy.model.Dom;
+import gennadziy.model.Granica;
+import gennadziy.model.User;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.apache.commons.io.FileUtils;
@@ -32,27 +35,29 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 @Slf4j
 @Controller
 public class MAinConrtl {
 
-    @Autowired
-    @Deprecated
-    private DomRepo domRepo;
+
+    private final DomRepo domRepo;
 
     @Autowired
-    private KursyRepo kursWalut;
-    @Autowired
-    private GranicaRepo granicaRepo;
-    @Autowired
-    private UserRepo userRepo;
+    public MAinConrtl(DomRepo domRepo, KursyRepo kursWalut, UserRepo userRepo, GranicaRepo granicaRepo) {
+        this.domRepo = domRepo;
+        this.kursWalut = kursWalut;
+        this.userRepo = userRepo;
+        this.granicaRepo = granicaRepo;
+    }
 
+    private final KursyRepo kursWalut;
+    private final GranicaRepo granicaRepo;
+    private final UserRepo userRepo;
 
 
     @GetMapping("/")
@@ -86,7 +91,6 @@ public class MAinConrtl {
     public String valut(Model model, DbInsertion db) {
         model.addAttribute("dbb", db.main());
         model.addAttribute("dbb1", db.main1());
-
         val kurs = kursWalut.findAll();
         List<User> users = userRepo.findAll();
         model.addAttribute("users", users);
@@ -107,8 +111,7 @@ public class MAinConrtl {
 
 
     @PostMapping("/add")
-    public String addW(Model model) {
-        Model model1 = model.addAttribute("db", new DbInsertion());
+    public String addW() {
         log.info("POST ZAPROS");
         return "redirect:/valut";
     }
@@ -133,14 +136,14 @@ public class MAinConrtl {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteDom(@PathVariable("id") Long id, Dom dom) {
+    public String deleteDom(@PathVariable("id") Long id) {
         domRepo.deleteById(id);
         return "redirect:/main";
     }
 
 
     @PostMapping("/saveGr")
-    public String granicaSav(Model model, Granica granica) {
+    public String granicaSav(Granica granica) {
         granicaRepo.save(granica);
 
         return "redirect:/granica";
@@ -150,7 +153,7 @@ public class MAinConrtl {
     public String granica(Model model) throws IOException {
         List<Granica> list = granicaRepo.findAll();
         model.addAttribute("granica", list);
-        String nameF = "c:/Users/Marcin/Pictures/" + new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss").format(new Date()) + ".jpg";
+        String nameF = "c:/Users/Marcin/Pictures/" + new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date()) + ".jpg";
         Image bufferimage = ImageIO.read(new URL("https://www.brest.customs.gov.by/webcam/brst112_c1.jpg"));
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         ImageIO.write((RenderedImage) bufferimage, "jpg", output);
@@ -172,7 +175,7 @@ public class MAinConrtl {
     }
 
     @GetMapping("/view/{id}")
-    public String viewGranica(@PathVariable("id") Long id, Granica granica, Model model) {
+    public String viewGranica(@PathVariable("id") Long id, Model model) {
         String s = granicaRepo.findById(id).toString();
         model.addAttribute("bytes", Optional.ofNullable(s)
                 .filter(str -> str.length() != 0)

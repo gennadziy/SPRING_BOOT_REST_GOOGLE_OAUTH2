@@ -1,16 +1,17 @@
-package main.java.gennadziy.controller;
+package gennadziy.controller;
 
 import gennadziy.dao.DomRepo;
 import gennadziy.service.DomService;
 import gennadziy.exception.ResourceNotFoundException;
 import gennadziy.model.Dom;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@Api(value = "REST")
 @RestController
 @CrossOrigin
 public class Controller {

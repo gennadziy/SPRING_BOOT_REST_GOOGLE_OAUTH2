@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -17,8 +18,9 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 @Slf4j
+@Component
 public class DbInsertion extends Thread {
-     public static Object main() {
+    public Object main() {
 //        System.out.println (getAllStackTraces ().toString ());
         URL url;
         try {
@@ -35,7 +37,6 @@ public class DbInsertion extends Thread {
             if (file.exists()) {
                 file.delete();
                 file.createNewFile();
-                file.delete();
             }
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
@@ -76,8 +77,8 @@ public class DbInsertion extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
-         return null;
-     }
+        return null;
+    }
 
     public static void getJsonStrings(Connection mySqlConnection, PreparedStatement preparedStatement) {
         LinkedHashSet<String> jsonLineSet = new LinkedHashSet<>();
@@ -138,7 +139,7 @@ public class DbInsertion extends Thread {
         }
     }
 
-    public static Object main1() {
+    public Object main1() {
 //        System.out.println (getAllStackTraces ().toString ());
         URL url;
         try {
@@ -155,7 +156,6 @@ public class DbInsertion extends Thread {
             if (file.exists()) {
                 file.delete();
                 file.createNewFile();
-                file.delete();
             }
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
@@ -223,8 +223,9 @@ public class DbInsertion extends Thread {
             ie.printStackTrace();
         }
     }
+
     public static void insertData1(Connection mySqlConnection,
-                                  PreparedStatement preparedStatement, LinkedHashSet<String> jsonLineSet) {
+                                   PreparedStatement preparedStatement, LinkedHashSet<String> jsonLineSet) {
         for (String jsonLine : jsonLineSet) {
             try {
                 System.out.println("Executing query...");

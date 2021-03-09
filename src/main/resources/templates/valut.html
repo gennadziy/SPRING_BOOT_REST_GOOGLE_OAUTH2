@@ -6,13 +6,13 @@
 </head>
 <body>
 <p></p>
-<p>Click <a th:href="@{/api/all}"> REST API(all) </a></p>
+<!--<p>Click <a th:href="@{/api/all}"> REST API(all) </a></p>-->
 
-<p></p>
-<form name="form1" method="get" action="/valut">
-    <input type="Submit"  name=submit th:value="${dbb}">
-    <input type="Submit"  name=submit th:value="${dbb1}">
-</form>
+<!--<p></p>-->
+<!--<form name="form1" method="get" action="/valut">-->
+<!--    <input type="Submit"  name=submit th:value="${dbb}">-->
+<!--    <input type="Submit"  name=submit th:value="${dbb1}">-->
+<!--</form>-->
 <!--<select>-->
 <!--    <option th:value="${dbb}" th:text="RUR_RUBLE"></option>-->
 <!--    -->
@@ -29,7 +29,7 @@
         <th>Cur Scale</th>
         <th>Cur Name</th>
         <th>CurOfficialRate</th>
-        <th>Delete</th>
+<!--        <th>Delete</th>-->
     </tr>
     </thead>
     <tbody>
@@ -40,7 +40,7 @@
         <td th:text="${kursWalut.curScale}"></td>
         <td th:text="${kursWalut.curName}"></td>
         <td th:text="${kursWalut.curOfficialRate}"></td>
-        <td><a th:href="@{/valut/delete/{id}(id=${kursWalut.curID})}">Delete</a></td>
+<!--        <td><a th:href="@{/valut/delete/{id}(id=${kursWalut.curID})}">Delete</a></td>-->
     </tr>
     </tbody>
 </table>
@@ -50,28 +50,28 @@
 <p></p>
 <p></p>
 <p></p>
-<table border="1" class="table table-bordered table-hover horizontal-align">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>email</th>
-        <th>gender</th>
-        <th>Last Visit</th>
-        <th>Name</th>
-        <th>User Pict</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user: ${users}">
-        <td th:text="${user.id}"></td>
-        <td th:text="${user.email}"></td>
-        <td th:text="${user.gender}"></td>
-        <td th:text="${user.lastVisit}"></td>
-        <td th:text="${user.userpic}"></td>
-        <td th:text="${user.name}"></td>
-        <!--<td><a th:href="@{/valut/delete/{id}(id=${kursWalut.curID})}">Delete</a></td>-->
-    </tr>
-    </tbody>
+<!--<table border="1" class="table table-bordered table-hover horizontal-align">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>email</th>-->
+<!--        <th>gender</th>-->
+<!--        <th>Last Visit</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>User Pict</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="user: ${users}">-->
+<!--        <td th:text="${user.id}"></td>-->
+<!--        <td th:text="${user.email}"></td>-->
+<!--        <td th:text="${user.gender}"></td>-->
+<!--        <td th:text="${user.lastVisit}"></td>-->
+<!--        <td th:text="${user.userpic}"></td>-->
+<!--        <td th:text="${user.name}"></td>-->
+<!--        &lt;!&ndash;<td><a th:href="@{/valut/delete/{id}(id=${kursWalut.curID})}">Delete</a></td>&ndash;&gt;-->
+<!--    </tr>-->
+<!--    </tbody>-->
 </table>
 
 <form th:action="@{/main}">

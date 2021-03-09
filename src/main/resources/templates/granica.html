@@ -7213,7 +7213,7 @@
 
         <thead>
     <tr>
-        <th>curID</th>
+<!--        <th>curID</th>-->
         <th>Date</th>
         <th>Time</th>
         <th>View</th>
@@ -7222,7 +7222,7 @@
     </thead>
     <tbody>
     <tr th:each="gr: ${granica}">
-        <td th:text="${gr.id}" ></td>
+<!--        <td th:text="${gr.id}" ></td>-->
         <td th:text="${gr.date}"></td>
         <td th:text="${gr.time}"></td>
         <td><a th:href="@{/view/{id}(id=${gr.id})}" target="_blank">View</a></td>
